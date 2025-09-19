@@ -28,7 +28,7 @@ GTC-Book-Recommendation-System/
 ## ⚙️ Installation & Requirements
 1. Clone this repository:
    ```bash
-   git clone https://github.com/AhmedMagid2003/GTC-Book-Recommendation-System.git
+   git clone https://github.com/AhmedMagdi2003/GTC-Book-Recommendation-System.git
    cd GTC-Book-Recommendation-System
 2. Install requirements.txt
 ```bash
