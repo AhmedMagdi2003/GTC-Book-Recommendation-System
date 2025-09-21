@@ -14,14 +14,16 @@ The workflow includes:
 ```
 GTC-Book-Recommendation-System/
 │
-├── data_collecting_prepare/              # Data preparation & validation
+├── data/                                 
 │   ├── BX-Books.csv                      # Raw book metadata
 │   ├── BX-Users.csv                      # Raw user metadata
 │   ├── BX-Ratings.csv                    # Raw user-book ratings
 │   ├── cleaned_book_rating.csv           # Filtered and cleaned dataset
+|   ├── cleaned_book_rating_plus.csv      # Filtered and cleaned dataset with new features 
 ├── Notebooks/
 │   ├── 01_data_preparation_and_validation.ipynb
-|   ├── 02_EDA.ipynb 
+|   ├── 02_EDA.ipynb
+|   ├── 03_feature_engineering.ipynb
 ├── requirements.txt                      # Python dependencies
 └── README.md                             # Project documentation
 
