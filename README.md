@@ -19,8 +19,9 @@ GTC-Book-Recommendation-System/
 │   ├── BX-Users.csv                      # Raw user metadata
 │   ├── BX-Ratings.csv                    # Raw user-book ratings
 │   ├── cleaned_book_rating.csv           # Filtered and cleaned dataset
-│   └── 01_data_preparation_and_validation.ipynb  # Notebook for merging, cleaning & validation
-│
+├── Notebooks/
+│   ├── 01_data_preparation_and_validation.ipynb
+|   ├── 02_EDA.ipynb 
 ├── requirements.txt                      # Python dependencies
 └── README.md                             # Project documentation
 
