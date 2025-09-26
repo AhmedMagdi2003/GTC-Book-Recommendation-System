@@ -50,8 +50,15 @@ if uploaded_file is not None:
     if st.button("Get Recommendations"):
         recommendations = recommend_book(book_name)
         if recommendations:
-            st.write("Recommended Books:")
+            st.subheader("Recommended Books:")
+
             for book in recommendations:
-                st.write(book)
+                st.write(f"**{book}**")
+
+                # Try to get image URL from df
+                if "img_url" in df.columns:
+                    img_row = df[df["title"] == book].head(1)  # take first match
+                    if not img_row.empty and pd.notna(img_row["img_url"].values[0]):
+                        st.image(img_row["img_url"].values[0], width=120)
         else:
-            st.write("No recommendations found.")
+            st.warning("No recommendations found.")
