@@ -24,6 +24,8 @@ GTC-Book-Recommendation-System/
 │   ├── 01_data_preparation_and_validation.ipynb
 |   ├── 02_EDA.ipynb
 |   ├── 03_feature_engineering.ipynb
+|   ├── 04_model_training_and_validation.ipynb
+|   ├── 05_knn_model.ipynb
 ├── requirements.txt                      # Python dependencies
 └── README.md                             # Project documentation
 
