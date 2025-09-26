@@ -4,9 +4,11 @@ import numpy as np
 import pickle
 from sklearn.neighbors import NearestNeighbors
 from scipy.sparse import csr_matrix
+import os
 
 # Load the trained KNN model
-model_filename = '../App/models/knn_model.pkl'
+
+model_filename = os.path.join("App", "models", "knn_model.pkl")
 with open(model_filename, 'rb') as file:
     model = pickle.load(file)
 
