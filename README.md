@@ -13,22 +13,33 @@ The workflow includes:
 # Project Structure
 ```
 GTC-Book-Recommendation-System/
-│
-├── data/                                 
-│   ├── BX-Books.csv                      # Raw book metadata
-│   ├── BX-Users.csv                      # Raw user metadata
-│   ├── BX-Ratings.csv                    # Raw user-book ratings
-│   ├── cleaned_book_rating.csv           # Filtered and cleaned dataset
-|   ├── cleaned_book_rating_plus.csv      # Filtered and cleaned dataset with new features 
-├── Notebooks/
-│   ├── 01_data_preparation_and_validation.ipynb
-|   ├── 02_EDA.ipynb
-|   ├── 03_feature_engineering.ipynb
-|   ├── 04_model_training_and_validation.ipynb
-|   ├── 05_knn_model.ipynb
-├── requirements.txt                      # Python dependencies
-└── README.md                             # Project documentation
-
+📦App
+ ┣ 📂data
+ ┃ ┗ 📜cleaned_book_ratings_plus.csv
+ ┣ 📂models
+ ┃ ┗ 📜knn_model.pkl
+ ┣ 📂utils
+ ┃ ┗ 📜helper.py
+ ┣ 📜app.py
+ ┗ 📜requirements.txt
+📦data
+ ┣ 📜BX-Book-Ratings.csv
+ ┣ 📜BX-Books.csv
+ ┣ 📜BX-Users.csv
+ ┣ 📜cleaned_book_ratings.csv
+ ┗ 📜cleaned_book_ratings_plus.csv
+📦Notebooks
+ ┣ 📂histograms
+ ┃ ┣ 📜book_rating_histogram.png
+ ┃ ┣ 📜num_of_rating_histogram.png
+ ┃ ┣ 📜user_age_histogram.png
+ ┃ ┣ 📜user_id_histogram.png
+ ┃ ┗ 📜year_histogram.png
+ ┣ 📜01_data_preparation_and_validation.ipynb
+ ┣ 📜02_EDA.ipynb
+ ┣ 📜03_feature_engineering.ipynb
+ ┣ 📜04_model_training_and_validation.ipynb
+ ┗ 📜05_knn_model.ipynb
 ```
 ## ⚙️ Installation & Requirements
 1. Clone this repository:
