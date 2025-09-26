@@ -66,7 +66,6 @@ if page == "Upload & Train":
             def recommend_book(book_name, k=5):
                 if book_name not in user_item_matrix.index:
                     return []
-
                 book_id = np.where(user_item_matrix.index == book_name)[0][0]
                 distances, suggestions = knn.kneighbors(
                     user_item_matrix.iloc[book_id, :].values.reshape(1, -1),
@@ -75,8 +74,11 @@ if page == "Upload & Train":
                 suggested_books = user_item_matrix.index[suggestions[0][1:]]
                 return list(suggested_books)
 
-            # Input book name
-            book_name = st.text_input("Enter a book name to get recommendations:")
+            # Selectbox for book names
+            book_name = st.selectbox(
+                "Choose a book to get recommendations:",
+                options=sorted(user_item_matrix.index.tolist())
+            )
 
             if st.button("Get Recommendations"):
                 recommendations = recommend_book(book_name)
@@ -89,32 +91,4 @@ if page == "Upload & Train":
         except Exception as e:
             st.error(f"Error processing file: {e}")
 
-# -------------------------------
-# Page 2: Pre-trained Model
-# -------------------------------
-elif page == "Pre-trained Model":
-    st.title("📚 Amazon Book Recommendations")
-    st.write("Get recommendations from our trained model (books with ≥10 ratings).")
-
-    # Recommendation function using pre-trained model
-    def recommend_pretrained(book_name, k=5):
-        if book_name not in item_user_matrix.index:
-            return []
-
-        book_id = np.where(item_user_matrix.index == book_name)[0][0]
-        distances, suggestions = trained_model.kneighbors(
-            item_user_matrix.iloc[book_id, :].values.reshape(1, -1),
-            n_neighbors=k + 1
-        )
-        suggested_books = item_user_matrix.index[suggestions[0][1:]]
-        return list(suggested_books)
-
-    book_name = st.text_input("Enter a book name to get recommendations:")
-
-    if st.button("Get Recommendations (Pre-trained)"):
-        recommendations = recommend_pretrained(book_name, k=5)
-        if recommendations:
-            st.write("### Recommended Books:")
-            show_recommendations(recommendations, df)
-        else:
-            st.warning("No recommendations found. Try another book.")
+# ----
