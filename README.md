@@ -13,6 +13,7 @@ The workflow includes:
 # Project Structure
 ```
 GTC-Book-Recommendation-System/
+
 📦App
  ┣ 📂data
  ┃ ┗ 📜cleaned_book_ratings_plus.csv
