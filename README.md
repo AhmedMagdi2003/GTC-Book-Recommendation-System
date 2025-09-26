@@ -42,6 +42,9 @@ GTC-Book-Recommendation-System/
  ┣ 📜04_model_training_and_validation.ipynb
  ┗ 📜05_knn_model.ipynb
 ```
+# Wep App 
+ - https://gtc-book-recommendation-system.streamlit.app/
+```
 ## ⚙️ Installation & Requirements
 1. Clone this repository:
    ```bash
