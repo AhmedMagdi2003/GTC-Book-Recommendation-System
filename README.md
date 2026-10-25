@@ -1,56 +1,41 @@
-# 📚 GTC Book Recommendation System
+# GTC Book Recommendation System
 
-## 🎯 Project Objectives
-The purpose of this project is to build a **Book Recommendation System** using the [Book-Crossing Dataset].  
-The workflow includes:  
-- Collecting and combining raw datasets (**Books**, **Users**, **Ratings**).  
-- Validating and cleaning the data to ensure consistency.  
-- Filtering noisy entries (e.g., users or books with very few ratings).  
-- Preparing a fine-tuned dataset suitable for training recommendation models.  
-- Laying the foundation for machine learning approaches such as collaborative filtering, content-based, and hybrid methods.  
+**Find your next read through patterns in reader ratings.** This Streamlit app turns a book-ratings collection into an interactive, similarity-based recommendation experience.
 
----
-# Project Structure
-```
-GTC-Book-Recommendation-System/
+[Open the live app](https://gtc-book-recommendation-system.streamlit.app/) · [View the source](https://github.com/AhmedMagdi2003/GTC-Book-Recommendation-System)
 
-📦App
- ┣ 📂data
- ┃ ┗ 📜cleaned_book_ratings_plus.csv
- ┣ 📂models
- ┃ ┗ 📜knn_model.pkl
- ┣ 📂utils
- ┃ ┗ 📜helper.py
- ┣ 📜app.py
- ┗ 📜requirements.txt
-📦data
- ┣ 📜BX-Book-Ratings.csv
- ┣ 📜BX-Books.csv
- ┣ 📜BX-Users.csv
- ┣ 📜cleaned_book_ratings.csv
- ┗ 📜cleaned_book_ratings_plus.csv
-📦Notebooks
- ┣ 📂histograms
- ┃ ┣ 📜book_rating_histogram.png
- ┃ ┣ 📜num_of_rating_histogram.png
- ┃ ┣ 📜user_age_histogram.png
- ┃ ┣ 📜user_id_histogram.png
- ┃ ┗ 📜year_histogram.png
- ┣ 📜01_data_preparation_and_validation.ipynb
- ┣ 📜02_EDA.ipynb
- ┣ 📜03_feature_engineering.ipynb
- ┣ 📜04_model_training_and_validation.ipynb
- ┗ 📜05_knn_model.ipynb
-```
-# Wep App 
- - https://gtc-book-recommendation-system.streamlit.app/
-```
-## ⚙️ Installation & Requirements
-1. Clone this repository:
-   ```bash
-   git clone https://github.com/AhmedMagdi2003/GTC-Book-Recommendation-System.git
-   cd GTC-Book-Recommendation-System
-2. Install requirements.txt
-```bash
-pip install -r requirements.txt
-```
+## The project
+
+Readers often know what they enjoy but need help finding books with a similar audience. This project explores collaborative filtering: it compares rating patterns across books and surfaces recommendations from the available data.
+
+## What you can do
+
+- Browse recommendations for users in the prepared dataset.
+- Upload a ratings CSV to generate recommendations from a different set of readers.
+- See book covers when image links are present in the data.
+
+## How recommendations are formed
+
+The app organizes ratings by book and user, then uses cosine distance with a nearest-neighbor model to find books with similar rating patterns. For uploaded data, it builds a model from the submitted ratings. This is a similarity-based recommender, not an LLM-generated list.
+
+## Try it
+
+The live Streamlit app is the quickest way to explore the project. To run it locally, clone the repository, install the dependencies in requirements.txt, then run:
+
+~~~bash
+streamlit run app.py
+~~~
+
+The upload feature expects a CSV with these columns: user_id, title, and book_rating. The bundled model and prepared data are used by the built-in recommendation path.
+
+## Built with
+
+Python · Streamlit · pandas · scikit-learn nearest neighbors · cosine similarity
+
+## Project scope
+
+This is a learning project built around the included ratings data. Recommendations depend on the coverage and quality of those ratings; the repository does not connect to a live book catalog or provide an account-based personalization service.
+
+## About
+
+Built by Ahmed Magdi as a hands-on recommender systems project. See the [notebooks](https://github.com/AhmedMagdi2003/GTC-Book-Recommendation-System/tree/main/notebooks) for the analysis work.
